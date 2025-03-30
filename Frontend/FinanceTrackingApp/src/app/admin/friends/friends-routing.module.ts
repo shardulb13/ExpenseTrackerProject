@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddfriendComponent } from './addfriend/addfriend.component';
 import { FriendsListComponent } from './friends-list/friends-list.component';
 import { FriendsComponent } from './friends.component';
+import { FriendRequestListComponent } from './friend-request-list/friend-request-list.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,9 @@ const routes: Routes = [
       },
       {
         path:'', component:FriendsListComponent
+      },
+      {
+        path: 'friend-list-request', component: FriendRequestListComponent
       }
     ]
   }

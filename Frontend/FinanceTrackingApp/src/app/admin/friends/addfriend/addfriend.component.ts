@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { FriendRequestsService } from 'src/app/core/services/friend-requests.service';
 import { FriendsService } from 'src/app/core/services/friends.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class AddfriendComponent implements OnInit {
   allUsers: any;
   loggedInUser: any;
   addFriendForm: any;
-  constructor(private authService: AuthenticationService, private friendsService: FriendsService, private route: Router, private toastrService: ToastrService) { }
+  constructor(private authService: AuthenticationService, private friendsService: FriendsService, private friendRequestService: FriendRequestsService, private route: Router, private toastrService: ToastrService) { }
 
   ngOnInit(): void {
     this.authService.getAllUsers().subscribe(res => {
@@ -70,7 +71,7 @@ export class AddfriendComponent implements OnInit {
     this.showDropDown = false;
   }
 
-  addFriend() {
+  addFriendRequest() {
     if (this.checkedList.length == 0) {
       alert("Select User");
     }
@@ -78,8 +79,8 @@ export class AddfriendComponent implements OnInit {
       this.addFriendForm.controls['userId'].setValue(this.loggedInUser.id);
       this.addFriendForm.controls['friendUserId'].setValue(this.checkedList);
 
-      this.friendsService.addFriend(this.addFriendForm.value).subscribe(res => {
-        this.toastrService.success("Friend Added Successfully");
+      this.friendRequestService.addFriendRequest(this.addFriendForm.value).subscribe(res => {
+        this.toastrService.success("Friend Request sent successfully");
         this.route.navigate(['user/friends']);
       },
         err => {

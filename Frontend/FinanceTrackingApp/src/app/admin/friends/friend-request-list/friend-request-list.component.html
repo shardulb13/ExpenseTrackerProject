@@ -1,0 +1,22 @@
+<h1 class="text-center">Friend Requests</h1>
+<div class="container col-lg-8 ">
+    <table class="table mt-5 text-center align-middle table-bordered shadow">
+        <thead>
+            <tr>
+                <th>Friends Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of TempGetFriendsList">
+                <td>{{data.friendname}} ({{data.username}})</td>
+                <td>
+                    <button class="btn btn-success mx-2" (click)="acceptFriendRequest(data)" [hidden]="acceptButtonFlag"><i class="fa fa-check" aria-hidden="true" ></i></button>
+                    <button class="btn btn-danger"(click)="delete(data.username)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- <button (click)="get()">Get</button> -->

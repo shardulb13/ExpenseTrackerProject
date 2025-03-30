@@ -1,5 +1,6 @@
 using FinanceTrackingWebAPI.Authentication;
 using FinanceTrackingWebAPI.Data;
+using FinanceTrackingWebAPI.DataAccess;
 using FinanceTrackingWebAPI.DataAccessLayer;
 using FinanceTrackingWebAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -44,6 +45,8 @@ namespace FinanceTrackingWebAPI
             services.AddTransient<IGroupService, GroupService>();
             services.AddTransient<IFriendsDA, FriendsDA>();
             services.AddTransient<IFriendsService, FriendService>();
+            services.AddTransient<IFriendRequestDA, FriendRequestDA>();
+            services.AddTransient<IFriendRequestService, FriendRequestService>();
             services.AddControllers();
             //services.AddControllers().AddNewtonsoftJson(options =>
             //options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);

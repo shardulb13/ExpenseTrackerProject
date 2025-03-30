@@ -10,5 +10,7 @@ namespace FinanceTrackingWebAPI.Model
         public List<string> FriendUserId { get; set; }
         public string SingleFriendUserId { get; set; }
         public string Username { get; set; }
+        public string Sentby { get; set; }
+
     }
 }

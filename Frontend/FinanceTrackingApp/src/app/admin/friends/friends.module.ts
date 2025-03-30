@@ -6,13 +6,15 @@ import { FriendsComponent } from './friends.component';
 import { AddfriendComponent } from './addfriend/addfriend.component';
 import { FriendsListComponent } from './friends-list/friends-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FriendRequestListComponent } from './friend-request-list/friend-request-list.component';
 
 
 @NgModule({
   declarations: [
     FriendsComponent,
     AddfriendComponent,
-    FriendsListComponent
+    FriendsListComponent,
+    FriendRequestListComponent
   ],
   imports: [
     CommonModule,
