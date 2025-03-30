@@ -1,0 +1,21 @@
+<h1 class="text-center">Friends</h1>
+<div class="add-button container ">
+    <button class="btn btn-success float-end m-4 shadow" routerLink="addfriend">Add Friend</button>
+</div>
+<div class="container col-lg-8 ">
+    <table class="table text-center align-middle table-bordered shadow">
+        <thead>
+            <tr>
+                <th>Friends Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of tempfriendlist">
+                <td>{{data.friendname}} ({{data.username}})</td>
+                <td><button class="btn btn-danger"(click)="delete(data.username)"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- <button (click)="get()">Get</button> -->

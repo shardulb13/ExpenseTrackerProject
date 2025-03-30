@@ -1,0 +1,32 @@
+form{
+    margin: 10px auto;
+    padding: 1.2rem;
+  }
+  p{
+    font-size: 13px;
+  }
+  #links{
+    color:blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  span{
+    color:red;
+  }
+  .alert{
+    display: inline-block;
+    font-size: 1rem !important;
+    padding: 0 !important;
+    margin: 0!important;
+    color:red;
+  }
+  #progressnum{
+    color: black;
+    font-weight: bold;
+  }
+//   .updateProfile{
+//     overflow: auto;
+//     max-height: 85vh;
+//   }
+  
+  

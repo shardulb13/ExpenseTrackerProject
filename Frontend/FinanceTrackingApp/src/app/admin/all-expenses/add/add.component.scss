@@ -1,0 +1,97 @@
+// .user{
+//     padding: 10px 0px;
+// }
+.select{
+  margin: auto;
+}
+
+/***
+    css for multi select drop down
+**/
+.drop-toggle{
+    background-color: #fff;
+    border: none;
+    padding: 9px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    width: 33vw;
+    text-align: left;
+}
+.drop-toggle i{
+    float:right;
+}
+.drop-show {
+    padding: 4px;
+    width: 33vw;
+    background-color: #FFF;
+    border: 1px solid #BABABA;
+    position: absolute;
+    z-index: 100;
+    -webkit-box-shadow: 0 6px 10px rgba(0,0,0,.15);
+    -moz-box-shadow: 0 6px 10px rgba(0,0,0,.15);
+    box-shadow: 0 6px 10px rgba(0,0,0,.15);
+    margin-left: 1px;
+}
+.drop-show label{
+    display:block;
+    font-size:15px;
+    cursor: pointer;
+}
+.drop-show label input{
+    vertical-align: top;
+    margin: 4px;
+}
+.drop-show label span{
+    display:inline-block;
+}
+
+.alert{
+    color: red;
+}
+// .expenseForm{
+//     overflow: auto;
+//     max-height: 85vh;
+// }
+span{
+    padding: 0 !important;
+}
+.fa{
+    font-size: 20px;
+    margin-right: 4px;
+}
+
+.form-overflow{
+    height: 81vh;
+    overflow: auto;
+}
+
+@media (max-width:667px) {
+    .drop-toggle {
+        width: 100%;
+    }
+    .drop-show {
+        width: 95.4vw;
+    }
+}
+@media (min-width:767.98px) {
+    .drop-toggle {
+        width: 100%;
+    }
+    .drop-show {
+        width: 97.7vw;
+    }
+}
+@media (min-width:991.98px) {
+    .drop-toggle {
+        width: 100%;
+    }
+    .drop-show {
+        width: 32vw;
+    }
+}
+// @media (max-width: 575.98px) { ... }
+// // Small devices (landscape phones, less than 768px)
+// @media (max-width: 767.98px) { ... }
+// // Medium devices (tablets, less than 992px)
+// @media (max-width: 991.98px) { ... }

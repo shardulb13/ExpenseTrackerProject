@@ -1,0 +1,20 @@
+a{
+    cursor: pointer;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+nav{
+    box-shadow: 0px 0px 10px #8080804f;
+    background-color: rgb(230, 240, 230) !important;
+}
+.logout{
+    color: red;
+}
+.username{
+    font-weight: bold;
+}
+.username:hover{
+    text-decoration: none;
+}

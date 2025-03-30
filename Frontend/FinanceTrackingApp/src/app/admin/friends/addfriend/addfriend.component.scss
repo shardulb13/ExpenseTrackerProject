@@ -1,0 +1,67 @@
+/***
+    css for multi select drop down
+**/
+.drop-toggle{
+    background-color: #fff;
+    border: none;
+    padding: 11px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    width: 37.3vw;
+    text-align: left;
+}
+.drop-toggle i{
+    float:right;
+}
+.drop-show {
+    padding: 4px;
+    width: 37.3vw;
+    background-color: #FFF;
+    border: 1px solid #BABABA;
+    position: absolute;
+    z-index: 100;
+    -webkit-box-shadow: 0 6px 10px rgba(0,0,0,.15);
+    -moz-box-shadow: 0 6px 10px rgba(0,0,0,.15);
+    box-shadow: 0 6px 10px rgba(0,0,0,.15);
+    margin-left: 1px;
+    overflow: auto;
+    height: 40%;
+}
+.drop-show label{
+    display:block;
+    font-size:15px;
+    cursor: pointer;
+}
+.drop-show label input{
+    vertical-align: top;
+    margin: 4px;
+}
+.drop-show label span{
+    display:inline-block;
+}
+
+@media (max-width:667px) {
+    .drop-toggle {
+        width: 100%;
+    }
+    .drop-show {
+        width: 93vw;
+    }
+}
+@media (min-width:767.98px) {
+    .drop-toggle {
+        width: 100%;
+    }
+    .drop-show {
+        width: 84.3vw;
+    }
+}
+@media (min-width:991.98px) {
+    .drop-toggle {
+        width: 100%;
+    }
+    .drop-show {
+        width: 31.5vw;
+    }
+}

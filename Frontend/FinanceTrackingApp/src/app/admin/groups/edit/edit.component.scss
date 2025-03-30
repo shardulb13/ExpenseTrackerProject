@@ -1,0 +1,99 @@
+.selected-users-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.selectedUser {
+    align-items: center;
+    padding: 6px 10px;
+    margin: 4px;
+    background-color: #e6f0e6;
+    border-radius: 20px;
+}
+
+.selectedUser button {
+    font-size: 14px;
+    border: 0;
+    background-color: transparent;
+}
+
+.selectedUser button:hover {
+    transform: scale(1.5);
+    background-color: none;
+    border-radius: 20px;
+    color: rgb(255, 5, 5);
+    cursor: pointer
+}
+
+/***
+    css for multi select drop down
+**/
+.drop-toggle {
+    background-color: #fff;
+    border: none;
+    padding: 9px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    width: 39vw;
+    text-align: left;
+}
+
+.drop-toggle i {
+    float: right;
+}
+
+.drop-show {
+    padding: 4px;
+    width: 32vw;
+    background-color: #FFF;
+    border: 1px solid #BABABA;
+    position: absolute;
+    z-index: 100;
+    -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 6px 10px rgba(0, 0, 0, .15);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .15);
+    margin-left: 1px;
+}
+
+.drop-show label {
+    display: block;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.drop-show label input {
+    vertical-align: top;
+    margin: 4px;
+}
+
+.drop-show label span {
+    display: inline-block;
+}
+
+@media (max-width:667px) {
+    .drop-toggle {
+        width: 100%;
+    }
+    .drop-show {
+        width: 69.2%;
+    }
+}
+@media (min-width:767.98px) {
+    .drop-toggle {
+        width: 100%;
+    }
+    .drop-show {
+        width: 85%;
+    }
+}
+@media (min-width:991.98px) {
+    .drop-toggle {
+        width: 100%;
+    }
+    .drop-show {
+        width: 26%;
+    }
+}

@@ -1,0 +1,29 @@
+form{
+  margin: 30px auto;
+  background-color: #ffffff;
+  padding: 1.2rem;
+  box-shadow: 0px 0px 16px 2px #d9d6d6;
+}
+p{
+  font-size: 13px;
+}
+#links{
+  color:blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+span{
+  color:red;
+}
+.alert{
+  display: inline-block;
+  font-size: 1rem !important;
+  padding: 0 !important;
+  margin: 0!important;
+  color:red;
+}
+#progressnum{
+  color: black;
+  font-weight: bold;
+}
+

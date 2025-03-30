@@ -1,0 +1,20 @@
+<div class="container col-lg-4 mx-auto mt-5 pt-5">
+    <h2 class="">Add Friend</h2>
+    <div class="select">
+        <div class="" (mouseleave)=" mouseleavefunc($event)">
+            <label class="form-label">Select People</label><br>
+            <button class="drop-toggle btn"  (click)="showDropDown=!showDropDown">
+                <i class="fa fa-angle-down"></i>
+            </button><br>
+            <span *ngIf="selectedlist.length>0" class="mb-2"> <strong> Selected People:</strong> {{selectedlist.join(', ')}}</span>
+            <div class="drop-show" *ngIf="showDropDown">
+                <label class="form-label" *ngFor="let a of friendsList">
+                    <input type="checkbox" [(ngModel)]="a.checked"
+                    (change)="getSelectedValue(a.checked,a.userName,a.id)">
+                    <span>{{a.firstName}} {{a.lastName}} ({{a.userName}})</span>
+                </label>
+            </div><br>
+            <button class="btn btn-success" (click)="addFriend()">Add Friend</button>
+        </div>
+    </div>
+</div>

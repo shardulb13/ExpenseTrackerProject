@@ -1,0 +1,33 @@
+<div class="mx-auto col-lg-4 mt-5 p-3">
+    <h2>Create Group</h2>
+    <form [formGroup]="groupForm" class="mb-3 mt-3">
+        <div>
+            <label for="expName" class="form-label">Group Name</label>
+            <input type="text" class="form-control" placeholder="Name" formControlName="groupName">
+            <span class="alert" *ngIf="form['groupName']?.errors?.['required'] && form['groupName']?.touched">Group Name is required</span>
+            <span class="alert" *ngIf="form['groupName']?.errors?.['maxlength']">Group Name must be less than 20 characters.</span>
+        </div> 
+    </form>
+    <div class="select">
+        <div (mouseleave)=" mouseleavefunc($event)">
+            <label class="form-label">Select Friends</label><br>
+            <button class="drop-toggle btn"  (click)="showDropDown=!showDropDown">
+                <i class="fa fa-angle-down"></i>
+            </button><br>
+            <div class="drop-show" *ngIf="showDropDown">
+                <label class="form-label" *ngFor="let a of allFriends">
+                    <input type="checkbox" [(ngModel)]="a.checked"
+                    (change)="getSelectedValue(a.checked,a.userName,a.id)">
+                    <span>{{a.userName}}</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <span *ngIf="selectedlist.length>0"> <strong> Selected Friends:</strong> {{selectedlist.join(', ')}}</span>
+    <div class="mt-2">
+        <button class="btn btn-success me-2 mt-3" [disabled]="!groupForm.valid" (click)="createGroup()">Create Group</button>
+    </div>
+</div>
+
+
+    

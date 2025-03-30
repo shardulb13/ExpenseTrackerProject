@@ -1,0 +1,47 @@
+<div class="updateProfile">
+    <div class="container mx-auto">
+        <form [formGroup]="updateForm" class="col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xl-6">
+            <h1>Update Profile</h1>
+            <div class="mb-3">
+                <label for="firstname" class="form-label">Firstname</label>
+                <input type="text" class="form-control" placeholder="Enter Firstname" formControlName="Firstname">
+                <span *ngIf="form['Firstname']?.errors?.['required'] && form['Firstname']?.touched">Firstname
+                    required</span>
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Lastname</label>
+                <input type="text" class="form-control" placeholder="Enter Lastname" formControlName="Lastname">
+                <span *ngIf="form['Lastname']?.errors?.['required'] && form['Lastname']?.touched">Lastname
+                    required</span>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" placeholder="Enter Username" formControlName="UserName">
+                <span *ngIf="form['UserName']?.errors?.['required'] && form['UserName']?.touched">Username
+                    required</span>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" placeholder="Enter Email Address" formControlName="Email">
+                <span *ngIf="form['Email']?.errors?.['required']&& form['Email']?.touched">Email id required</span>
+                <span *ngIf="form['Email']?.errors?.['pattern']">Enter a valid email address</span>
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-label">Upload Profile Photo</label>
+                <input type="file" class="form-control" formControlName="File" (change)="onFileSelected($event)">
+                <p class="alert" *ngIf="form['File']?.errors?.['required'] && form['File']?.touched">Profile picture
+                    required</p>
+                <!-- Progress bar -->
+                <div class="progress" *ngIf="barwidth">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" [style.width.%]="barwidth">
+                        <span id="progressnum" [innerText]="barwidth"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <button class="btn btn-success fw-bold" (click)="update()">Update</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="mt-5 p-5 col-lg-4 mx-auto ">
+    <h2>Edit Group</h2>
+    <form [formGroup]="groupForm" class="mb-3 mt-3 mx-2">
+        <div>
+            <label for="expName" class="form-label">Group Name</label>
+            <input type="text" class="form-control" placeholder="Name" formControlName="groupName">
+        </div>
+    </form>
+    <div class="select">
+        <div class="mb-3 mx-2 " (mouseleave)=" mouseleavefunc($event)">
+            <label class="form-label">Select Friends</label><br>
+            <button class="drop-toggle btn"  (click)="showDropDown=!showDropDown">
+                <i class="fa fa-angle-down"></i>
+            </button><br>
+            <span *ngIf="selectedlist.length>0"> <strong> Selected Friends:</strong> {{selectedlist.join(', ')}}</span>
+            <div class="drop-show" *ngIf="showDropDown">
+                <label class="form-label" *ngFor="let a of friendList">
+                    <input type="checkbox" [(ngModel)]="a.checked"
+                    (change)="getSelectedValue(a.checked,a.userName,a.id)">
+                    <span>{{a.userName}}</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="selected-users-div mx-2">
+        <strong>Existing Users:</strong><span class="selectedUser" *ngFor="let i of editUserId"> <strong>{{i}}</strong> 
+            <button (click)="deleteGroupUser(i)"><i class="fa fa-times" aria-hidden="true"></i></button></span>
+        </div>
+    <div class="mt-2 mx-2">
+        <button class="btn btn-success me-2" (click)="updateGroup()">Update Group</button>
+    </div>
+    <!-- <button (click)="editUsers()">Edit</button> -->
+</div>

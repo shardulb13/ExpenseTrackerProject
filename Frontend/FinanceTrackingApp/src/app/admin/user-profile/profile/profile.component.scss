@@ -1,0 +1,63 @@
+.card {
+    border: none;
+    box-shadow: 2px 2px 10px #e2dfdf;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.fonts {
+    font-size: 11px;
+}
+
+.social-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-list li {
+    padding: 10px;
+    color: black;
+    font-size: 19px;
+}
+
+input[type=file] {
+    width: 80%;
+    margin: auto;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.buttons button:nth-child(1) {
+    border: 1px solid #e6f0e6 !important;
+    color: black;
+    height: 40px;
+}
+
+.buttons button:nth-child(1):hover {
+    border: 1px solid #e6f0e6 !important;
+    color: black;
+    height: 40px;
+    background-color: #e6f0e6;
+}
+
+.buttons button:nth-child(2) {
+    border: 1px solid #e6f0e6 !important;
+    background-color: #e6f0e6;
+    color: black;
+    height: 40px;
+}
+
+.upload {
+    margin: auto;
+}
+
+.btn-upload {
+    border: 1px solid rgb(203, 203, 203);
+    padding: 3px;
+    border-radius: 4px;
+    margin-left: 1px;
+}

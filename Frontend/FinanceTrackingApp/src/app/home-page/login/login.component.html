@@ -1,0 +1,21 @@
+<div class="container">
+  <form [formGroup]="loginForm">
+      <h1>Login</h1>
+      <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" placeholder="Enter Username" formControlName="UserName">
+          <span *ngIf="form['UserName']?.errors?.['required'] && form['UserName']?.touched">Username required</span>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" placeholder="Enter Password" formControlName="Password">
+          <span *ngIf="form['Password']?.errors?.['required'] && form['Password']?.touched">Password required</span>
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-success fw-bold" (click)="login()">Login</button>
+        </div>
+        <div>
+          <p>Dont have an account? <span><a id="links" (click)="signUp()" >Sign Up</a></span></p>
+        </div>
+  </form>
+</div>

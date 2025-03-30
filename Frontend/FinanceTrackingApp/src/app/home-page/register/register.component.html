@@ -1,0 +1,55 @@
+<div class="container mx-auto">
+  <form [formGroup]="registerForm" class="col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xl-6">
+    <h1>Sign Up</h1>
+    <div class="mb-3">
+      <label for="firstname" class="form-label">Firstname</label>
+      <input type="text" class="form-control" placeholder="Enter Firstname" formControlName="Firstname">
+      <span *ngIf="form['Firstname']?.errors?.['required'] && form['Firstname']?.touched">Firstname required</span>
+      <span *ngIf="form['Firstname']?.errors?.['maxlength']">Firstname must be less than 20 characters</span>
+
+    </div>
+    <div class="mb-3">
+      <label for="lastname" class="form-label">Lastname</label>
+      <input type="text" class="form-control" placeholder="Enter Lastname" formControlName="Lastname">
+      <span *ngIf="form['Lastname']?.errors?.['required'] && form['Lastname']?.touched">Lastname required</span>
+      <span *ngIf="form['Lastname']?.errors?.['maxlength']">Lastname must be less than 20 characters</span>
+    </div>
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" placeholder="Enter Username" formControlName="UserName">
+      <span *ngIf="form['UserName']?.errors?.['required'] && form['UserName']?.touched">Username required</span>
+      <span *ngIf="form['UserName']?.errors?.['maxlength']">Username must be less than 20 characters</span>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" class="form-control" placeholder="Enter Email Address" formControlName="Email">
+      <span *ngIf="form['Email']?.errors?.['required']&& form['Email']?.touched">Email id required</span>
+      <span *ngIf="form['Email']?.errors?.['pattern']">Enter a valid email address</span>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" placeholder="Enter Password" formControlName="Password">
+      <p class="alert" *ngIf="form['Password']?.errors?.['required'] && form['Password']?.touched">Password required</p>
+      <p class="alert" *ngIf="form['Password']?.errors?.['pattern']">Password should contain at least One Uppercase,Lowercase, Symbol & Number</p>
+      <p class="alert" *ngIf="form['Password']?.errors?.['minlength']">Password must be of minimum 8 character</p>
+      <p class="alert" *ngIf="form['Password']?.errors?.['maxlength']">Password must be less than 14 character</p>
+    </div>
+    <div class="mb-3">
+      <label for="file" class="form-label">Upload Profile Photo</label>
+      <input type="file" class="form-control" formControlName="File" (change)="onFileSelected($event)">
+      <p class="alert" *ngIf="form['File']?.errors?.['required'] && form['File']?.touched">Profile picture required</p>
+      <!-- Progress bar -->
+      <div class="progress" *ngIf="barwidth">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" [style.width.%]="barwidth">
+        <span id="progressnum" [innerText]="barwidth"></span>
+        </div>
+      </div>
+    </div>
+    <div class="mb-2">
+      <button class="btn btn-success fw-bold" (click)="register()">Register</button>
+    </div>
+    <div>
+      <p>Already have an account? <span><a id="links" (click)="login()">Login</a></span></p>
+    </div>
+  </form>
+</div>
